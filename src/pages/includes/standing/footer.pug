@@ -1,0 +1,27 @@
+//- footer.pug
+include ../mixins/svg_icon
+
+footer.footer
+  .container
+    .footer__inner
+      .footer__logo-block
+        +svg_icon(require("../images/logo.svg").default).footer__logo
+      .footer__title
+        p ПАН Партнер <br>Первое Агенство Недвижимости, 2010—2020
+        a.footer__policy.js-modal-btn(data-id="policy") Политика конфиденциальности
+      .footer__contacts
+        p.footer__address Санкт-Петербург, Владимирский&nbsp;пр., д.&nbsp;3&nbsp;лит. А, офис 701
+        a.footer__phone(href="tel:+7(812)243-99-99") +7 (812) 243-99-99
+        ul.footer__social
+          li.footer__soc-item
+            a(href="#")
+              +svg_icon(require("../images/ig.svg").default).icon-ig
+          li.footer__soc-item
+            a(href="#")
+              +svg_icon(require("../images/tg.svg").default).icon-tg
+          li.footer__soc-item
+            a(href="#")
+              +svg_icon(require("../images/fb.svg").default).icon-fb
+          li.footer__soc-item
+            a(href="#")
+              +svg_icon(require("../images/vk.svg").default).icon-vk

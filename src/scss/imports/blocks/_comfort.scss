@@ -1,0 +1,89 @@
+.comfort {
+
+    &__inner {
+        @include row-flex();
+        align-items: center;
+        position: relative;
+    }
+
+    &__content {
+        @include col();
+        @include size(12);
+        @include size-md(10);
+        @include shift-md-left(1);
+        @include size-lg(4);
+        @include shift-lg-left(1);
+        @include size-xl(4);
+        @include shift-xl-left(1);
+        order: 2;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        flex-direction: column;
+
+        @include lg-block {
+            order: 1;
+            align-items: flex-start;
+            text-align: left;
+            padding-right: 30px;
+        }
+    }
+
+    &__image {
+        @include col();
+        @include size(12);
+        @include size-md(8);
+        @include shift-md-left(2);
+        @include size-lg(6);
+        @include shift-lg-right(1);
+        @include shift-lg-left(0);
+        @include size-xl(6);
+        @include shift-xl-right(1);
+        @include shift-xl-left(0);
+        order: 1;
+        margin-bottom: 36px;
+
+        @include lg-block {
+            order: 2;
+            margin-bottom: 0;
+        }
+
+        & span {
+          top: -50px;
+          right: 300px;
+          position: absolute;
+        }
+    }
+
+    &__img {
+        height: 0;
+        padding-bottom: 65.40540540540541%;
+        position: relative;
+        & svg {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+
+    }
+    &__rocket {
+      width: 97px;
+      height: 92px;
+    }
+    &__photo {
+        width: 23px;
+        height: 17px;
+        margin-right: 11px;
+    }
+
+    &__header {
+        margin-bottom: 32px;
+    }
+
+    &__text {
+        margin-bottom: 32px;
+    }
+}

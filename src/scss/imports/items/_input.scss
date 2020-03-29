@@ -1,0 +1,86 @@
+.input {
+  $c: &;
+  position: relative;
+  // min-width: 180px;
+
+  &__control {
+    -webkit-appearance: none;
+    touch-action: manipulation;
+    padding: 0 24px;
+    height: 50px;
+    background: transparent;
+    box-shadow: 0 0 0 1px rgba(143, 149, 172, 0.2);
+    border-radius: 3px;
+    font-family: 'Formular', sans-serif;
+    font-size: 14px;
+    line-height: 50px;
+    font-weight: 300;
+    color: $color-white;
+    box-sizing: border-box;
+    transition: box-shadow .4s ease;
+    width: 100%;
+    border: 0;
+
+    &::placeholder {
+      color: $color-white;
+    }
+
+    &:hover {
+      box-shadow: 0 0 0 1px rgba(143, 149, 172, 0.4);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 1px rgba(143, 149, 172, 0.6);
+    }
+
+    &.shake {
+      // border-color: $color-red;
+
+      & ~ #{$c}__error {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+
+  &_width {
+
+    &_available {
+      width: 100%;
+    }
+
+    &_small {
+      width: 60px;
+    }
+  }
+
+  &__label {
+    color: #8F95AC;
+    font-size: 14px;
+    line-height: 24px;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+
+
+
+  &__error {
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s ease;
+    color: $color-red;
+    position: absolute;
+    bottom: -24px;
+    font-size: 14px;
+    font-weight: 300;
+  }
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active  {
+    box-shadow: inset 0 0 0 1px rgba(143, 149, 172, 0.2), 0 0 0 30px #2C2E3E inset !important;
+    -webkit-text-fill-color: #fff !important;
+}

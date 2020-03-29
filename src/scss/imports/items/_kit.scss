@@ -1,0 +1,68 @@
+.kit {
+
+    &-pill {
+        $c: &;
+
+
+        &__control {
+            width: 0;
+            height: 0;
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+
+            &:not(:disabled) + #{$c}__box {
+              cursor: pointer;
+            }
+
+            &:checked ~ #{$c}__box {
+                background-color: $color-red;
+                box-shadow: none;
+            }
+
+            &:checked ~ #{$c}__box {
+
+                & #{$c}__text {
+                    color: #fff;
+                }
+
+                & #{$c}__icon {
+
+                    & svg path {
+                        stroke: #fff!important;
+                    }
+                }
+            }
+        }
+
+        &__box {
+            box-shadow: inset 0 0 0 1px rgba(143, 149, 172, 0.3);
+            border-radius: 3px;
+            height: 32px;
+            background-color: transparent;
+            display: inline-flex;
+            align-items: center;
+            padding: 0 16px;
+            transition: all .4s ease;
+
+            &:hover {
+                box-shadow: inset 0 0 0 1px rgba(143, 149, 172, 0.6);
+            }
+        }
+
+        &__icon {
+            margin-right: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &__text {
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 14px;
+            color: #8F95AC;
+        }
+
+    }
+}

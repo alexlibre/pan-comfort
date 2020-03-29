@@ -1,0 +1,29 @@
+.photogal {
+
+  &__inner {
+    @include row-flex();
+  }
+
+  &__item {
+    @include col();
+    @include size(12);
+    @include size-md(6);
+    @include size-lg(4);
+    @include size-xl(4);
+    margin-bottom: #{$offset};
+    @include md-block {
+      margin-bottom: #{$offset-md};
+    }
+    @include lg-block {
+      margin-bottom: #{$offset-lg};
+    }
+    @include xl-block {
+      margin-bottom: #{$offset-xl};
+    }
+
+
+    & img {
+      display: block;
+    }
+  }
+}

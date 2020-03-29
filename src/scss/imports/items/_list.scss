@@ -1,0 +1,24 @@
+.list {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+
+  &__item {
+    padding-left: 0;
+    margin-bottom: 16px;
+    display: flex;
+    font-weight: 300;
+
+    &:before {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      background-color: $color-red;
+      margin-right: 16px;
+      margin-top: 9px;
+      flex-shrink: 0;
+    }
+  }
+}

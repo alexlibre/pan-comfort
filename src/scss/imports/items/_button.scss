@@ -1,0 +1,81 @@
+.button {
+  border: 0;
+  padding: 0;
+  background: none;
+  -webkit-tap-highlight-color: transparent;
+  text-decoration: none;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &_view_default {
+    padding: 22px 35px;
+    color: $color-white;
+    background: $color-red;
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+    border-radius: 66px;
+    transition: background .4s ease;
+    white-space: nowrap;
+
+    &:hover {
+      background: $color-red-hover;
+    }
+  }
+
+  &_view_ghost {
+    padding: 22px 35px;
+    color: #8F95AC;
+    background: transparent;
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+    border-radius: 66px;
+    transition: background .4s ease;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 0 0 1px #8F95AC;
+  }
+
+  &_view_outline {
+    padding: 14px 29px;
+    color: $color-red;
+    background: transparent;
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+    border-radius: 66px;
+    box-shadow: inset 0 0 0 1px $color-red;
+    transition: box-shadow .4s ease;
+
+    &:hover {
+      box-shadow: inset 0 0 0 3px $color-red;
+    }
+  }
+
+  &_view_link {
+    color: $color-typo-default;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 6px 20px;
+    border-radius: 40px;
+    background-color: transparent;
+    transition: background-color .3s ease;
+
+    &:hover {
+      background-color: $color-button-link-hover;
+    }
+  }
+
+  &_view_icon-plus {
+    display: inline-flex;
+    align-items: center;
+  }
+}

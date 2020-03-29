@@ -1,0 +1,40 @@
+.mapboxgl-popup {
+
+    border-radius: 4px;
+    font-family: 'Formular', sans-serif;
+
+    &-content {
+        padding: 42px 16px 28px;
+        min-width: 240px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &__address {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        margin-bottom: 9px;
+    }
+
+    &__desc {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        margin-bottom: 19px;
+    }
+
+    &__image {
+        margin-bottom: 24px;
+        & img {
+            display: block;
+        }
+    }
+
+    &__order {
+        margin-top: 28px;
+    }
+}

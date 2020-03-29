@@ -1,0 +1,10 @@
+mixin kit-pill(data)
+    label.kit-pill(for= data.id)
+        input.kit-pill__control.js-form-checkbox(type="checkbox" name= data.id id= data.id checked= data.checked disabled= data.disabled)
+        if data.disabled
+          input(type="hidden" name= data.id value= !data.disabled)
+        .kit-pill__box
+            if block
+                .kit-pill__icon
+                    block
+            .kit-pill__text= data.text

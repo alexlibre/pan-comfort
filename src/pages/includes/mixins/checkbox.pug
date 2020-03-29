@@ -1,0 +1,6 @@
+mixin checkbox(data)
+  label.checkbox(for= data.id)
+    .checkbox__inner
+      input(type="checkbox" id= data.id checked= data.checked)
+      .checkbox__box
+      span.checkbox__text= data.label

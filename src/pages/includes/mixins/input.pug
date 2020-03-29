@@ -1,0 +1,14 @@
+mixin input(data)
+  .input(class= data.classList)
+    if data.type == 'select'
+      if data.label
+        label.input__label(for= data.id)= data.label
+      select(name= data.name id= data.id)
+        if data.list
+          each item in data.list
+            option= item
+    else
+      if data.label
+        label.input__label(for= data.id)= data.label
+      input.input__control(type= data.type placeholder= data.placeholder value= data.value class= data.controlClassList id= data.id autocomplete= data.autocomplete)
+      .input__error= data.errorMsg

@@ -1,0 +1,9 @@
+include ./svg_icon
+mixin modal(data)
+  .modal.js-modal(data-id= data.id class= data.classList)
+    .modal__shadow
+    +svg_icon(require("../images/close.svg").default).js-modal-btn(data-id= data.id).modal__close
+    .modal__content
+      .modal__inner
+        if block
+          block

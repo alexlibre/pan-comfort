@@ -1,0 +1,34 @@
+.text {
+
+  &_big {
+
+    @include md-block {
+      font-size: 21px;
+      line-height: 26px;
+      font-weight: 300;
+    }
+
+    @include lg-block {
+
+    }
+  }
+
+  &_left {
+    text-align: left!important;
+    margin-top: 24px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+  }
+
+  &_left + ul {
+    text-align: left;
+    margin-top: 24px;
+  }
+
+  &_red {
+    color: $color-red;
+  }
+}

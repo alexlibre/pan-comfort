@@ -1,0 +1,45 @@
+.map {
+    margin-bottom: 0;
+    &__inner {
+        @include row-flex();
+    }
+
+    &__header {
+        @include col();
+        @include size(12);
+        @include size-md(8);
+        @include shift-md-left(2);
+        @include size-lg(10);
+        @include shift-lg-left(1);
+        @include size-xl(8);
+        @include shift-xl-left(2);
+        text-align: center;
+        margin-bottom: 45px;
+
+        @include md-block {
+            margin-bottom: 55px;
+        }
+        @include lg-block {
+            margin-bottom: 84px;
+            text-align: left;
+        }
+        @include xl-block {
+            margin-bottom: 100px;
+        }
+    }
+
+    &__container {
+        min-height: 495px;
+
+        @include md-block {
+            min-height: 762px;
+        }
+        @include lg-block {
+            min-height: 1031px;
+        }
+        @include xl-block {
+            min-height: 1360px;
+        }
+        
+    }
+}

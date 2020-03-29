@@ -1,0 +1,188 @@
+.advantages {
+
+
+    @include md-block {
+        @include wrapper();
+    }
+    margin-bottom: 120px!important;
+
+    &__wrap {
+        @include row-flex();
+    }
+
+    &__inner {
+        @include col();
+        @include size(12);
+        @include size-xl(10);
+        @include shift-xl(1);
+        background-color: #2C2E3E;
+        color: #fff;
+        padding: 60px 0;
+        @include wrapper();
+
+        @include md-block {
+            padding: 75px 0 50px; 
+        }
+        @include lg-block {
+            padding: 150px 0 100px; 
+        }
+    }
+
+    &__content {
+        @include row-flex();
+
+        @include md-block {
+            @include u-row-flex(15px);
+        }
+        @include xl-block {
+            @include u-row-flex(30px);
+        }
+    }
+
+    &__header {
+        @include col();
+        @include size(12);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 25px;
+        font-size: 20px;
+        line-height: 25px;
+        
+        @include md-block {
+            align-items: flex-start;
+            text-align: left;
+            @include u-col(15px);
+            @include u-size(6, 12, 15px);
+            padding-left: calc(100% / 12);
+            padding-right: calc(100% / 12);
+            margin-bottom: 90px;
+            font-size: 21px;
+            line-height: 24px;
+        }
+
+        @include lg-block {
+            font-size: 40px;
+            line-height: 43px;
+        }
+
+        @include xl-block {
+            @include u-col(30px);
+            @include u-size(6, 10, 30px);
+            padding-left: 10%;
+            margin-bottom: 120px;
+        }
+    }
+
+    &__schedule {
+        @include col();
+        @include size(12);
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 44px;
+
+        @include md-block {
+            @include u-col(15px);
+            @include u-size(6, 12, 15px);
+            align-items: flex-start;
+            text-align: left;
+        }
+        @include xl-block {
+            @include u-col(30px);
+            @include u-size(4, 10, 30px);
+            padding-right: 10%;
+        }
+
+        &-red {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__address {
+        margin-top: 15px;
+    }
+
+    &__list {
+        @include col();
+        @include size(12);
+        display: flex;
+        text-align: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+        @include md-block {
+            @include u-col(15px);
+            @include u-size(12, 12, 15px);
+            padding-left: calc(100% / 12);
+            padding-right: calc(100% / 12);
+        }
+
+        @include xl-block {
+            @include u-col(30px);
+            @include u-size(10, 10, 30px);
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__item {
+        flex: 1 0 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 32px;
+
+        @include md-block {
+            flex: 1 0 calc(100% / 3);
+        }
+        @include lg-block {
+            flex: 0 0 calc(100% / 6);
+        }
+        
+    }
+
+    &__icon {
+        width: 60px;
+        height: 43px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 22px;
+
+        & > .adv {
+            
+            &-1 {
+                width: 45px;
+                height: 34px;
+            }
+            &-2 {
+                width: 60px;
+                height: 41px;
+            }
+            &-3 {
+                width: 39px;
+                height: 30px;
+            }
+            &-4 {
+                width: 43px;
+                height: 43px;
+            }
+            &-5 {
+                width: 53px;
+                height: 38px;
+            }
+            &-6 {
+                width: 40px;
+                height: 43px;
+            }
+        }
+    }
+}

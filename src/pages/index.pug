@@ -1,0 +1,323 @@
+//- index.pug
+extends includes/layout
+include includes/mixins/svg_icon
+include includes/mixins/modal
+include includes/mixins/input
+include includes/mixins/grid
+include includes/mixins/checkbox
+include includes/mixins/kit-pill
+//- +svg_icon(require("../images/bronka-logo.svg").default).section-main__logo
+//- img(src= require("../images/tea/tea-black.png"))
+
+block title
+  | ПАН Партнёр
+block content
+  //- +grid()
+
+  main
+    section.section.section_main.main
+      .main__inner
+        .main__scheme
+          +svg_icon(require("../images/main.svg").default).main-scheme
+      .container
+        .main__wrapper
+          .main__content
+              p.main__mark ПАН Партнер
+              h1.main__header ПАН Комфорт
+              p.main__descript Встречайтесь с&nbsp;клиентами быстрее и&nbsp;удобнее с&nbsp;сетью переговорных ПАН Партнер
+              .main__btns
+                a.button.button_view_default.main__loc(href="#view-map") Посмотреть локации
+                //- button.button.button_view_icon-plus.main__video.js-modal-btn(data-id="video")
+                //-   +svg_icon(require("../images/video.svg").default).main-video
+                //-   span Смотреть видео
+      .container
+        .main__scroller.js-scroll#scroller
+          .main__scroller-add <span class="main__scroller-10">10</span>переговорных
+    section.section.section_gallery.gallery#view-gallery
+      .container
+        .gallery__inner
+          .gallery__slider.js-slider.swiper-container
+            .swiper-wrapper
+              .swiper-slide
+                .gallery__slide
+                  img(src= require("../images/003.jpg"))
+                  .gallery__info(data-swiper-parallax="500" data-swiper-parallax-opacity="0") Организуйте конфиденциальные переговоры тет-а-тет или приглашайте на&nbsp;встречи семьи от&nbsp;2&nbsp;человек. Мы&nbsp;позаботились о&nbsp;вашем размещении в&nbsp;комнатах комфортной вместительностью до&nbsp;7&nbsp;человек.
+              .swiper-slide
+                .gallery__slide
+                  img(src= require("../images/006.jpg"))
+                  .gallery__info(data-swiper-parallax="500" data-swiper-parallax-opacity="0") Клиенты быстрее настраиваются на&nbsp;сотрудничество в&nbsp;деловой атмосфере. Переговорные изолированы от&nbsp;посторонних звуков и&nbsp;людей&nbsp;&mdash; во&nbsp;время встречи ничто не&nbsp;будет отвлекать вас от&nbsp;переговоров.
+              .swiper-slide
+                .gallery__slide
+                  img(src= require("../images/002.jpg"))
+                  .gallery__info(data-swiper-parallax="500" data-swiper-parallax-opacity="0") Больше сервиса для партнеров ПАН Партнер: специально для вас Абсолют-банк предлагает программу лояльности и&nbsp;банковский сервис 24&times;7. Подробнее о&nbsp;программе лояльности вам расскажет управляющий отделением банка-партнера.
+              .swiper-slide
+                .gallery__slide
+                  img(src= require("../images/005.jpg"))
+                  .gallery__info(data-swiper-parallax="500" data-swiper-parallax-opacity="0") Иногда супер-важно задержаться на&nbsp;встрече до&nbsp;победного. В&nbsp;банке пойдут вам навстречу и&nbsp;оставят офис рабочим до&nbsp;23.00&nbsp;в будние дни, если ситуация будет этого требовать.
+              .swiper-slide
+                .gallery__slide
+                  img(src= require("../images/001.jpg"))
+                  .gallery__info(data-swiper-parallax="500" data-swiper-parallax-opacity="0") Обращайтесь к сотрудникам банка при необходимости. <br>Они помогут с печатью, копированием и другой работой с документами.
+          .swiper-pagination
+          .gallery__controls.swiper-controls
+            button.swiper-button-prev
+              +svg_icon(require("../images/prev.svg").default).swiper-prev
+            button.swiper-button-next
+              +svg_icon(require("../images/next.svg").default).swiper-next
+    section.section.section_about.about
+      .container
+        .about__inner
+          h2.about__header Гибкое решение для деловых встреч с партнерами
+          ul.about__list
+            li.about__item
+              .about__icon
+                +svg_icon(require("../images/about-1.svg").default).about-1
+              .about__content
+                h3.about__title Расширяйте <br>географию
+                p.about__text Переговорные доступны в 7 районах города
+            li.about__item
+              .about__icon
+                +svg_icon(require("../images/about-2.svg").default).about-2
+              .about__content
+                h3.about__title Атмосфера <br>бизнес-встречи
+                p.about__text Каждая переговорная оснащена офисной мебелью, wi-fi, розетками для ноутбука
+            li.about__item
+              .about__icon
+                +svg_icon(require("../images/about-3.svg").default).about-3
+              .about__content
+                h3.about__title Сервис <br>в деталях
+                p.about__text Вас с клиентами лично встретит управляющий отделением банка, организует чай или кофе и проводит в переговорную
+          .about__request
+            a.button.button_view_default(href="#order") Оставить заявку
+    section.section.section_comfort.comfort
+      .container
+        .comfort__inner
+          .comfort__content
+            h2.comfort__header Комфорт VIP-класса для вас и ваших клиентов
+            p.comfort__text Бронируйте приватную VIP-зону с диванами и музыкой для клиентов, которые ценят дополнительный комфорт и быстрее принимают решения в неформальной обстановке.
+            a.button.button_view_ghost.js-modal-btn(data-id="gallery")
+              +svg_icon(require("../images/photo.svg").default).comfort__photo
+              span Смотреть фото
+          .comfort__image
+            .comfort__img
+              +svg_icon(require("../images/comfort.svg").default)
+            span
+              +svg_icon(require("../images/rocket.svg").default).comfort__rocket
+    section.section.section_advantages.advantages
+      //- .container
+      .advantages__wrap
+        .advantages__inner
+          .advantages__content
+            h2.advantages__header При посещении переговорных в вашем распоряжении:
+            .advantages__schedule
+              p.text.text_red.advantages__schedule-red График работы переговорных:
+              p.text будни с 9:00—20:00
+              p.text выходные с 9:00—16.00
+              p.text.advantages__address (ул. Диленская, 1 лит. А с 9:00 до 16.00)
+            ul.advantages__list
+              li.advantages__item
+                .advantages__icon
+                  +svg_icon(require("../images/advant-1.svg").default).advant-1
+                p.advantages__text Чай / Кофе
+              li.advantages__item
+                .advantages__icon
+                  +svg_icon(require("../images/advant-2.svg").default).advant-2
+                p.advantages__text Розетки
+              li.advantages__item
+                .advantages__icon
+                  +svg_icon(require("../images/advant-3.svg").default).advant-3
+                p.advantages__text Wi-Fi
+              li.advantages__item
+                .advantages__icon
+                  +svg_icon(require("../images/advant-4.svg").default).advant-4
+                p.advantages__text Принтер
+              li.advantages__item
+                .advantages__icon
+                  +svg_icon(require("../images/advant-5.svg").default).advant-5
+                p.advantages__text Кондиционер
+              li.advantages__item
+                .advantages__icon
+                  +svg_icon(require("../images/advant-6.svg").default).advant-6
+                p.advantages__text Канцелярские <br>принадлежности
+
+    section.section.section_map.map#view-map
+      .container
+        .map__inner
+          h2.map__header Карта доступных переговорных
+      .map__container#map
+
+    form.form#order
+      .form__container
+        .form__inner
+          .form__wrapper
+            h2.form__header Как воспользоваться?
+            .form__row.form__row_distribute_full
+              .form__item
+                +input({
+                  type: 'select',
+                  label: 'Выберите офис',
+                  id: 'location',
+                  list: ['Выберите']
+                })
+              .form__item
+                +input({
+                  type: 'select',
+                  label: 'Выберите переговорную',
+                  id: 'room',
+                })
+
+            .form__subrow.js-root
+              .form__item
+
+            .form__row.form__row_distribute_auto
+              .form__item
+                +kit-pill({
+                  id: 'wifi',
+                  text: 'WiFi',
+                  checked: false,
+                  disabled: true
+                })
+                  <svg class="icon-wifi" xmlns="http://www.w3.org/2000/svg" width="22" height="18" fill="none"><path d="M.367 5.087A14.23 14.23 0 0110.848.5c4.253 0 8.071 1.86 10.685 4.811" stroke="#8F95AC"/><path d="M3.325 8.643a9.714 9.714 0 017.562-3.605 9.714 9.714 0 017.688 3.765M6.341 12.07a5.872 5.872 0 014.57-2.18c1.89 0 3.572.892 4.648 2.277" stroke="#8F95AC"/><path clip-rule="evenodd" d="M12.195 15.41a1.245 1.245 0 11-2.49 0 1.245 1.245 0 012.49 0z" stroke="#8F95AC"/></svg>
+              .form__item
+                +kit-pill({
+                  id: 'tea',
+                  text: 'Чай / Кофе',
+                  checked: false,
+                  disabled: true
+                })
+                  <svg class="icon-tea" xmlns="http://www.w3.org/2000/svg" width="25" height="19" fill="none"><path clip-rule="evenodd" d="M1 3.84v10.806c0 1.83 1.5 3.394 3.33 3.394h12.528c1.829 0 3.162-1.564 3.162-3.394V3.84H1z" stroke="#8F95AC"/><path d="M20.163 13.717c.248.038.434.059.65.059 1.905 0 3.45-1.08 3.45-3.403 0-2.474-1.545-3.403-3.45-3.403-.222 0-.412.02-.67.06" stroke="#8F95AC" stroke-linecap="round"/><path d="M14.36 6.822l.217-.451a.5.5 0 00-.433 0l.216.45zm-2.505 1.203l-.217-.451a.5.5 0 00-.284.45h.5zm0 7.149h-.5a.5.5 0 00.5.5v-.5zm5.011 0v.5a.5.5 0 00.5-.5h-.5zm0-7.15h.5a.5.5 0 00-.283-.45l-.216.45zm-2.527 2.48a.444.444 0 01-.444-.444h-1c0 .797.647 1.444 1.444 1.444v-1zm-.444-.444c0-.246.2-.445.444-.445v-1c-.797 0-1.444.647-1.444 1.445h1zm.444-.445c.245 0 .444.199.444.445h1c0-.798-.646-1.445-1.444-1.445v1zm.444.445c0 .245-.199.444-.444.444v1c.798 0 1.444-.647 1.444-1.444h-1zm-.639-3.689l-2.506 1.203.433.902 2.506-1.203-.433-.902zm-2.79 1.654v7.149h1v-7.15h-1zm.5 7.649h5.012v-1h-5.011v1zm5.512-.5v-7.15h-1v7.15h1zm-.283-7.6l-2.506-1.203-.433.902 2.506 1.203.433-.902z" fill="#8F95AC"/><path d="M14.36 9.087V2.593c0-.88-.73-1.593-1.61-1.593-.88 0-1.611.713-1.611 1.593v1.124" stroke="#8F95AC" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              .form__item
+                +kit-pill({
+                  id: 'dc',
+                  text: 'Розетки',
+                  checked: false,
+                  disabled: true
+                })
+                  <svg class="icon-dc" xmlns="http://www.w3.org/2000/svg" width="35" height="16" fill="none"><path d="M24.76 13.765h-7.58a3.79 3.79 0 01-3.788-3.79v-3.79a3.79 3.79 0 013.789-3.79h7.58" stroke="#8F95AC" stroke-linecap="round" stroke-linejoin="round"/><path d="M24.76 12.501v1.264c0 .697.567 1.262 1.265 1.262h1.262V1.132h-1.262c-.698 0-1.264.565-1.264 1.263v2.526" stroke="#8F95AC" stroke-linecap="round" stroke-linejoin="round"/><path clip-rule="evenodd" d="M33.604 5.553v0c0 .698-.565 1.264-1.263 1.264h-5.053V4.29h5.053c.698 0 1.263.566 1.263 1.263zM33.604 10.607v0c0 .697-.565 1.263-1.263 1.263h-5.053V9.343h5.053c.698 0 1.263.566 1.263 1.264zM11.497 8.711V7.448c0-.698.565-1.263 1.263-1.263h.632v3.79h-.632a1.263 1.263 0 01-1.263-1.264z" stroke="#8F95AC" stroke-linecap="round" stroke-linejoin="round"/><path d="M11.497 8.08H4.29M4.29.5a3.79 3.79 0 100 7.579M4.29.5h14.786" stroke="#8F95AC" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              .form__item
+                +kit-pill({
+                  id: 'music',
+                  text: 'Музыка',
+                  checked: false,
+                  disabled: true
+                })
+                  <svg class="icon-musics" xmlns="http://www.w3.org/2000/svg" width="13" height="19" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.5 14.833c-.92 0-1.667.748-1.667 1.667 0 .92.748 1.667 1.667 1.667.954 0 1.667-.88 1.667-1.667v-1.667H2.5zM2.5 19A2.503 2.503 0 010 16.5C0 15.121 1.121 14 2.5 14H5v2.5C5 17.832 3.832 19 2.5 19zM10.5 11.833c-.92 0-1.667.748-1.667 1.667 0 .92.748 1.667 1.667 1.667.954 0 1.667-.88 1.667-1.667v-1.667H10.5zm0 4.167A2.503 2.503 0 018 13.5c0-1.379 1.121-2.5 2.5-2.5H13v2.5c0 1.332-1.168 2.5-2.5 2.5z" fill="#8F95AC"/><path fill-rule="evenodd" clip-rule="evenodd" d="M4.818 14H4V3.68L13 0v11.49h-.818V1.236L4.818 4.246V14z" fill="#8F95AC"/><path fill-rule="evenodd" clip-rule="evenodd" d="M12.714 3l.286.754L5.286 7 5 6.246 12.714 3z" fill="#8F95AC"/></svg>
+              .form__item
+                +kit-pill({
+                  id: 'condition',
+                  text: 'Кондиционер',
+                  checked: false,
+                  disabled: true
+                })
+                  <svg class="icon-condition" xmlns="http://www.w3.org/2000/svg" width="35" height="13" fill="none"><path clip-rule="evenodd" d="M.5 10.201c0 1.2.973 2.172 2.172 2.172h29.537c1.2 0 2.172-.972 2.172-2.172V2.672c0-1.2-.972-2.172-2.172-2.172H2.672A2.172 2.172 0 00.5 2.672v7.529z" stroke="#8F95AC" stroke-linecap="round" stroke-linejoin="round"/><path clip-rule="evenodd" d="M4.265 12.372h20.85V8.463H4.265v3.91z" stroke="#8F95AC" stroke-linecap="round" stroke-linejoin="round"/><path fill-rule="evenodd" clip-rule="evenodd" d="M28.035 9.042a.724.724 0 110 1.448.724.724 0 010-1.448zM30.93 9.042a.724.724 0 110 1.448.724.724 0 010-1.448z" fill="#8F95AC"/><path d="M4.192 3.396H30.98M4.192 5.712H30.98" stroke="#8F95AC" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            .form__row.form__row_distribute_full
+              .form__item
+                +input({
+                  type: 'text',
+                  label: 'Ваше имя',
+                  id: 'fio'
+                })
+              .form__item
+                +input({
+                  type: 'text',
+                  label: 'Телефон',
+                  id: 'phone',
+                  controlClassList: 'js-phone-mask',
+                  autocomplete: 'off',
+                  errorMsg: 'Введите корректный телефон'
+                })
+              .form__item
+                +input({
+                  type: 'text',
+                  label: 'Дата',
+                  id: 'dates',
+                  controlClassList: 'js-datetimepicker',
+                })
+              .form__item.form__item_multiple
+                +input({
+                  type: 'text',
+                  label: 'Время с',
+                  id: 'timeFrom',
+                  classList: '',
+                  controlClassList: 'js-datetimepicker-t-from',
+                })
+                +input({
+                  type: 'text',
+                  label: 'Время до',
+                  id: 'timeTo',
+                  classList: '',
+                  controlClassList: 'js-datetimepicker-t-to',
+                })
+
+            .form__row.form__row_distribute_center.form__submit
+              .form__item
+                button.button.button_view_default(type="submit") Оставить заявку
+
+  +modal({
+    id: 'gallery'
+  })
+    .photogal
+      .container
+        .photogal__inner
+          .photogal__item
+            figure
+              a(href="../assets/images/vip-001.jpg")
+                img(src= require("../images/vip-001.jpg"))
+          .photogal__item
+            figure
+              a(href="../assets/images/vip-002.jpg")
+                img(src= require("../images/vip-002.jpg"))
+          .photogal__item
+            figure
+              a(href="../assets/images/vip-003.jpg")
+                img(src= require("../images/vip-003.jpg"))
+          .photogal__item
+            figure
+              a(href="../assets/images/vip-004.jpg")
+                img(src= require("../images/vip-004.jpg"))
+          .photogal__item
+            figure
+              a(href="../assets/images/vip-005.jpg")
+                img(src= require("../images/vip-005.jpg"))
+          .photogal__item
+            figure
+              a(href="../assets/images/vip-006.jpg")
+                img(src= require("../images/vip-006.jpg"))
+    .pswp(tabindex="-1" role="dialog" aria-hidden="true")
+      .pswp__bg
+
+      .pswp__scroll-wrap
+          .pswp__container
+              .pswp__item
+              .pswp__item
+              .pswp__item
+          .pswp__ui.pswp__ui--hidden
+              .pswp__top-bar
+                  .pswp__counter
+                  <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                  //- <button class="pswp__button pswp__button--share" title="Share"></button>
+                  <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                  <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                  .pswp__preloader
+                      .pswp__preloader__icn
+                        .pswp__preloader__cut
+                          .pswp__preloader__donut
+              .pswp__share-modal.pswp__share-modal--hidden.pswp__single-tap
+                  .pswp__share-tooltip
+              <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+              <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+              .pswp__caption
+                  .pswp__caption__center
+
+
+  +modal({
+    id: 'video'
+  })
+    .video
+      //- <iframe src="https://www.youtube.com/embed/mkApEREWV-E?controls=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  +modal({
+    id: 'submit',
+    classList: 'modal_centered'
+  })
+    h2.h1.modal__title Ваша заявка успешно отправлена!
+    p.text.text_big После обработки заявки нашим менеджером, Вам будет выслано письмо на указанный e-mail со ссылкой к доступу.
